@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="profile">
+
+        <EditTextPreference
+            android:dialogTitle="Enter a password to protect your locked Notes"
+            android:key="Password"
+            android:hint="password"
+            android:inputType="number"
+            android:password="true"
+            android:title="Lock password"/>
+        <EditTextPreference
+            android:dialogTitle="Enter a hint for your password"
+            android:key="Hint"
+            android:title="Hint"/>
+    </PreferenceCategory>
+</PreferenceScreen>
