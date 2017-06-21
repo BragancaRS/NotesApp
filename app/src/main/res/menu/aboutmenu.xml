@@ -12,5 +12,5 @@
         app:showAsAction="never"
         android:icon="@android:drawable/ic_menu_manage"
         android:orderInCategory="110"
-        android:title="setting"/>
+        android:title="configurações"/>
 </menu>

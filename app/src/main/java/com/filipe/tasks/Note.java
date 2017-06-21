@@ -1,4 +1,4 @@
-package com.example.steph.stickynotesapp;
+package com.filipe.tasks;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import java.util.Date;
 
 /**
- * Created by steph on 1/1/2017.
+ * Created by Filipe on
  */
 public class Note implements Parcelable {
     private String title;

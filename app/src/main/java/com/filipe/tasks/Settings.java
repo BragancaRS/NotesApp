@@ -1,4 +1,4 @@
-package com.example.steph.stickynotesapp;
+package com.filipe.tasks;
 
 import android.app.Activity;
 import android.os.Bundle;

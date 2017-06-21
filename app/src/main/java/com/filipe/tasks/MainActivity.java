@@ -1,4 +1,4 @@
-package com.example.steph.stickynotesapp;
+package com.filipe.tasks;
 
 import android.app.Activity;
 import android.content.Context;
@@ -21,6 +21,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.filipe.tasks.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -112,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         builder.setTitle("Lock password");
 // Set up the input
                         final EditText input = new EditText(this);
-                        input.setHint("please enter your password");
+                        input.setHint("Digite uma senha");
 // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
                         input.setInputType(InputType.TYPE_NUMBER_VARIATION_NORMAL | InputType.TYPE_NUMBER_VARIATION_PASSWORD);
                         builder.setView(input);
@@ -124,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                                 if (m_Text.matches(profilePrefs.getString("Password", null))) {
                                     startActivity(intent);
                                 } else {
-                                    Toast.makeText(MainActivity.this, "Wrong password\n Hint: " + profilePrefs.getString("Hint", null), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(MainActivity.this, "Senha errada\n Hint: " + profilePrefs.getString("Hint", null), Toast.LENGTH_LONG).show();
                                 }
                             }
                         });
@@ -158,10 +160,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 addOrEditNote(view, notes, textView1, textView2);
             } else {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle("Lock password");
+                builder.setTitle("Proteger senha");
 // Set up the input
                 final EditText input = new EditText(this);
-                input.setHint("please enter your password");
+                input.setHint("Digite a senha");
 // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
                 input.setInputType(InputType.TYPE_NUMBER_VARIATION_PASSWORD);
                 builder.setView(input);
@@ -173,11 +175,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         if (m_Text.matches(profilePrefs.getString("Password", null))) {
                             addOrEditNote(view, notes, textView1, textView2);
                         } else {
-                            Toast.makeText(MainActivity.this, "Wrong password\n Hint: " + profilePrefs.getString("Hint", null), Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this, "Senha incorreta\n Hint: " + profilePrefs.getString("Hint", null), Toast.LENGTH_LONG).show();
                         }
                     }
                 });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();
@@ -258,9 +260,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             holder.textView1.setText(note.getTitle());
             holder.textView2.setText(note.getDescription());
             if (note.getCreateDate().compareTo(note.getLastModified()) == 0)
-                holder.textView3.setText("created: " + note.getCreateDate().toString());
+                holder.textView3.setText("Criado em: 21/06/17" );//+ note.getCreateDate().toString());
             else
-                holder.textView3.setText("Last modified: " + note.getLastModified().toString());
+                holder.textView3.setText("Modificado em: " + note.getLastModified().toString());
             return row;
         }
 
